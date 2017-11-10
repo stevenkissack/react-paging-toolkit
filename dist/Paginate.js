@@ -50,7 +50,7 @@ var Paginate = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: this.props.className },
+        { className: this.props.className + (this.props.loading ? ' loading' : '') },
         showTopPager && showPagers && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount }),
         this.props.loading && !!Loader && _react2.default.createElement(Loader, null),
         (!this.props.loading || this.props.loading && this.props.preserveDataDuringLoading) && this.props.children,

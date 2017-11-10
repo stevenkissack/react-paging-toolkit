@@ -76,7 +76,6 @@ var PaginateControl = function (_Component) {
           options = options.concat(this.makeArray(total - halfRange, halfRange + 1));
         }
       }
-      console.log(options);
       return options;
     }
   }, {
@@ -119,7 +118,7 @@ var PaginateControl = function (_Component) {
             var isActive = currentPage === option;
             return _react2.default.createElement(
               'li',
-              { className: "page-item " + (isActive ? "active" : ""), tabIndex: option },
+              { key: idx, className: "page-item " + (isActive ? "active" : ""), tabIndex: option },
               _react2.default.createElement(
                 'a',
                 { className: 'page-link', onClick: function onClick() {

@@ -138,7 +138,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      return _react2.default.createElement(
 	        'div',
-	        { className: this.props.className },
+	        { className: this.props.className + (this.props.loading ? ' loading' : '') },
 	        showTopPager && showPagers && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount }),
 	        this.props.loading && !!Loader && _react2.default.createElement(Loader, null),
 	        (!this.props.loading || this.props.loading && this.props.preserveDataDuringLoading) && this.props.children,
@@ -4933,7 +4933,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	          options = options.concat(this.makeArray(total - halfRange, halfRange + 1));
 	        }
 	      }
-	      console.log(options);
 	      return options;
 	    }
 	  }, {
@@ -4976,7 +4975,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var isActive = currentPage === option;
 	            return _react2.default.createElement(
 	              'li',
-	              { className: "page-item " + (isActive ? "active" : ""), tabIndex: option },
+	              { key: idx, className: "page-item " + (isActive ? "active" : ""), tabIndex: option },
 	              _react2.default.createElement(
 	                'a',
 	                { className: 'page-link', onClick: function onClick() {
