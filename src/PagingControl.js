@@ -43,10 +43,8 @@ class PaginateControl extends Component {
   render() {
     let {paging, onSelect, totalCount, className} = this.props
 
-    paging = { perPage: 20, page: 1, ...paging}
-
-    let pageCount = totalCount / paging.perPage
-    let currentPage = paging.page
+    let pageCount = totalCount / parseInt(paging.perPage || 20, 10)
+    let currentPage = parseInt(paging.page || 1, 10)
 
     let previousDisabled = currentPage === 1
     let nextDisabled = pageCount === currentPage

@@ -25,6 +25,8 @@ class UrlPaginateExample extends React.Component {
 			data: [],
 			totalCount: 0, // Needed if you want the in-built paging control
 		})
+
+		// This is only needed for this demo, as we use it in the example fake data
 		if(this.state.paging.page !== undefined) {
 			this.state.paging.page = parseInt(this.state.paging.page, 10)
 		}
@@ -37,17 +39,17 @@ class UrlPaginateExample extends React.Component {
 	onPageSelect(page) {
 		// set the loading state
 		this.setState({ loading: true })
-
 		this.loadPage({...this.state.paging, page})
 	}
 
 	loadPage(nextPagingState, callback) {
+
 		// Create 20 items of fake data
 		let newFakeData = []
 		for(let f=0,fl=20; f<fl; f++) {
 			newFakeData.push({
-				id: f * nextPagingState.page,
-				title: 'page:' + nextPagingState.page + ' item:' + f
+				id: f * (nextPagingState.page || 1),
+				title: 'page:' + (nextPagingState.page || 1) + ' item:' + f
 			})
 		}
 
