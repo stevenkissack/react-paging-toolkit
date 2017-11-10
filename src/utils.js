@@ -37,7 +37,7 @@ export function WithPaging(originalState) {
 }
 
 export function WithUrlPaging(originalState, optionalFilterList) {
-    return { ...WithPaging, ...getPagingSearchParams(optionalFilterList), ...originalState }
+    return { ...WithPaging, paging: {...getPagingSearchParams(optionalFilterList)}, ...originalState }
 }
 
 export default {

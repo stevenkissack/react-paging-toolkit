@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import SimplePaginateExample from './simple-paginate'
+import UrlPaginateExample from './url-paginate'
 
 class App extends React.Component {
 	render() {
@@ -10,7 +11,7 @@ class App extends React.Component {
 				<SimplePaginateExample/>
 				<br/>
 				<h1>URL controlled paging example</h1>
-				TODO
+				<UrlPaginateExample/>
 				<br/>
 				<h1>Redux powered example</h1>
 				TODO

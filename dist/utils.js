@@ -59,7 +59,7 @@ function WithPaging(originalState) {
 }
 
 function WithUrlPaging(originalState, optionalFilterList) {
-    return _extends({}, WithPaging, getPagingSearchParams(optionalFilterList), originalState);
+    return _extends({}, WithPaging, { paging: _extends({}, getPagingSearchParams(optionalFilterList)) }, originalState);
 }
 
 exports.default = {
