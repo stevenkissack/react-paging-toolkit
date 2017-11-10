@@ -38,7 +38,6 @@ class PaginateControl extends Component {
         options = options.concat(this.makeArray(total - halfRange, halfRange + 1))
       }
     }
-    console.log(options)
     return options
   }
   render() {
@@ -61,7 +60,7 @@ class PaginateControl extends Component {
           </li>
           { options.map((option, idx) => {
               let isActive = currentPage === option
-              return <li className={"page-item " + (isActive ? "active" : "")} tabIndex={option}>
+              return <li key={idx} className={"page-item " + (isActive ? "active" : "")} tabIndex={option}>
                 <a className="page-link" onClick={()=> { if(Number.isInteger(option)) { onSelect(option) } }}>{option} {isActive ? <span className="sr-only">(current)</span> : undefined}</a>
               </li>
             })

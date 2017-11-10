@@ -15,7 +15,7 @@ class Paginate extends Component {
     let Loader = this.props.loaderComponent
 
     return (
-      <div className={this.props.className}>
+      <div className={this.props.className + (this.props.loading ? ' loading': '')}>
         { showTopPager && showPagers && <PagingControlComponent paging={this.props.paging} onSelect={this.props.onSelect} totalCount={this.props.totalCount} /> }
         { this.props.loading && !!Loader && <Loader /> }
         { (!this.props.loading || (this.props.loading && this.props.preserveDataDuringLoading)) && this.props.children }
