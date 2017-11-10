@@ -9,6 +9,10 @@ class PaginateControl extends Component {
   generateOptions(current, total) {
     let options
 
+    if(!current || !total) {
+      return []
+    }
+
     // TODO: This actually comes out as 7 due to also showing the current one when in the middle
     let rangeDisplayed = 6
 
@@ -39,6 +43,8 @@ class PaginateControl extends Component {
   }
   render() {
     let {paging, onSelect, totalCount, className} = this.props
+
+    paging = { perPage: 20, page: 1, ...paging}
 
     let pageCount = totalCount / paging.perPage
     let currentPage = paging.page

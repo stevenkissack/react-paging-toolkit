@@ -7,7 +7,7 @@ import PagingControl from './PagingControl'
  */
 class Paginate extends Component {
   render() {
-
+    let showPagers = Number.isInteger(this.props.totalCount) && this.props.paging
     let showTopPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "top"
     let showBottomPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "bottom"
     // Uppercase to allow as Components
@@ -16,10 +16,10 @@ class Paginate extends Component {
 
     return (
       <div className={this.props.className}>
-        { showTopPager && <PagingControlComponent paging={this.props.paging} onSelect={this.props.onSelect} totalCount={this.props.totalCount} /> }
+        { showTopPager && showPagers && <PagingControlComponent paging={this.props.paging} onSelect={this.props.onSelect} totalCount={this.props.totalCount} /> }
         { this.props.loading && !!Loader && <Loader /> }
         { (!this.props.loading || (this.props.loading && this.props.preserveDataDuringLoading)) && this.props.children }
-        { showBottomPager && <PagingControlComponent paging={this.props.paging} onSelect={this.props.onSelect} totalCount={this.props.totalCount} /> }
+        { showBottomPager && showPagers && <PagingControlComponent paging={this.props.paging} onSelect={this.props.onSelect} totalCount={this.props.totalCount} /> }
       </div>
     )
   }
