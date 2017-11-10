@@ -30,9 +30,11 @@ function parsePagingParams(paramString, paramFilterList) {
 
     // Filter params from returned querystring
     if (paramFilterList) {
-        return paramFilterList.map(function (param) {
-            return parsedParams[param];
+        var params = void 0;
+        paramFilterList.map(function (param) {
+            params[param] = parsedParams[param];
         });
+        return params;
     } else {
         return parsedParams;
     }
