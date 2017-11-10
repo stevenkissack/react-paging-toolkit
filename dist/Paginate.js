@@ -41,7 +41,7 @@ var Paginate = function (_Component) {
   _createClass(Paginate, [{
     key: 'render',
     value: function render() {
-
+      var showPagers = Number.isInteger(this.props.totalCount) && this.props.paging;
       var showTopPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "top";
       var showBottomPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "bottom";
       // Uppercase to allow as Components
@@ -51,10 +51,10 @@ var Paginate = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: this.props.className },
-        showTopPager && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount }),
+        showTopPager && showPagers && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount }),
         this.props.loading && !!Loader && _react2.default.createElement(Loader, null),
         (!this.props.loading || this.props.loading && this.props.preserveDataDuringLoading) && this.props.children,
-        showBottomPager && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount })
+        showBottomPager && showPagers && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount })
       );
     }
   }]);

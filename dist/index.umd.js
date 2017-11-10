@@ -129,7 +129,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(Paginate, [{
 	    key: 'render',
 	    value: function render() {
-	
+	      var showPagers = Number.isInteger(this.props.totalCount) && this.props.paging;
 	      var showTopPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "top";
 	      var showBottomPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "bottom";
 	      // Uppercase to allow as Components
@@ -139,10 +139,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return _react2.default.createElement(
 	        'div',
 	        { className: this.props.className },
-	        showTopPager && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount }),
+	        showTopPager && showPagers && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount }),
 	        this.props.loading && !!Loader && _react2.default.createElement(Loader, null),
 	        (!this.props.loading || this.props.loading && this.props.preserveDataDuringLoading) && this.props.children,
-	        showBottomPager && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount })
+	        showBottomPager && showPagers && _react2.default.createElement(PagingControlComponent, { paging: this.props.paging, onSelect: this.props.onSelect, totalCount: this.props.totalCount })
 	      );
 	    }
 	  }]);
@@ -4861,6 +4861,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(2);
@@ -4902,6 +4904,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function generateOptions(current, total) {
 	      var options = void 0;
 	
+	      if (!current || !total) {
+	        return [];
+	      }
+	
 	      // TODO: This actually comes out as 7 due to also showing the current one when in the middle
 	      var rangeDisplayed = 6;
 	
@@ -4939,6 +4945,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          totalCount = _props.totalCount,
 	          className = _props.className;
 	
+	
+	      paging = _extends({ perPage: 20, page: 1 }, paging);
 	
 	      var pageCount = totalCount / paging.perPage;
 	      var currentPage = paging.page;
