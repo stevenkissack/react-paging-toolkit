@@ -130,8 +130,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'render',
 	    value: function render() {
 	
-	      var showTopPager = this.props.pagingControlPosition === "both" || props.pagingControlPosition === "top";
-	      var showBottomPager = this.props.pagingControlPosition === "both" || props.pagingControlPosition === "bottom";
+	      var showTopPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "top";
+	      var showBottomPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "bottom";
 	      // Uppercase to allow as Components
 	      var PagingControlComponent = this.props.pagingControlComponent;
 	      var Loader = this.props.loaderComponent;
