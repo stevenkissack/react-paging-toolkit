@@ -10,8 +10,8 @@ export function parsePagingParams(paramString, paramFilterList) {
 
     // Filter params from returned querystring
     if(paramFilterList) {
-        return paramFilterList.forEach(param => {
-            params[param] = parsedParams[param]
+        return paramFilterList.map(param => {
+            return parsedParams[param]
         })
     } else {
         return parsedParams

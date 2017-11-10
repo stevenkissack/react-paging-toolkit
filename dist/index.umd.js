@@ -5057,8 +5057,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    // Filter params from returned querystring
 	    if (paramFilterList) {
-	        return paramFilterList.forEach(function (param) {
-	            params[param] = parsedParams[param];
+	        return paramFilterList.map(function (param) {
+	            return parsedParams[param];
 	        });
 	    } else {
 	        return parsedParams;
