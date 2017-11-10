@@ -8,8 +8,8 @@ import PagingControl from './PagingControl'
 class Paginate extends Component {
   render() {
 
-    let showTopPager = this.props.pagingControlPosition === "both" || props.pagingControlPosition === "top"
-    let showBottomPager = this.props.pagingControlPosition === "both" || props.pagingControlPosition === "bottom"
+    let showTopPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "top"
+    let showBottomPager = this.props.pagingControlPosition === "both" || this.props.pagingControlPosition === "bottom"
     // Uppercase to allow as Components
     let PagingControlComponent = this.props.pagingControlComponent
     let Loader = this.props.loaderComponent

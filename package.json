@@ -1,79 +1,79 @@
 {
-    "name": "react-paging-toolkit",
-    "version": "0.1.0",
-    "description": "A React toolkit for simplifying paging",
-    "main": "dist/index.js",
-    "scripts": {
-      "watch:test": "npm t -- -w",
-      "test": "mocha src/tests/setup.js src/tests/index.spec.js",
-      "prebuild": "rimraf dist",
-      "build": "npm-run-all --parallel build:*",
-      "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
-      "build:umd": "webpack --output-filename index.umd.js",
-      "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-      "demo": "webpack-dev-server --config demo/webpack.config.js --debug --content-base demo --inline --hot --colors",
-      "demo:test": "mocha demo/tests/index.spec.js --compilers js:babel-register",
-      "demo:build": "rimraf demo/dist && webpack --config demo/webpack.config.js -p"
-    },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/stevokk/react-paging-toolkit.git"
-    },
-    "keywords": [
-      "React.js",
-      "React",
-      "react-component",
-      "paging"
-    ],
-    "files": [
-      "dist",
-      "README.md"
-    ],
-    "author": "Steven Kissack <stevokk@hotmail.com> (http://www.stevenkissack.com/)",
-    "license": "GNUv3",
-    "bugs": {
-      "url": "https://github.com/stevokk/react-paging-toolkit/issues"
-    },
-    "homepage": "https://github.com/stevokk/react-paging-toolkit#readme",
-    "devDependencies": {
-        "babel-cli": "^6.23.0",
-        "babel-loader": "^6.3.2",
-        "babel-plugin-react-transform": "^2.0.2",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-plugin-transform-react-remove-prop-types": "^0.3.2",
-        "babel-preset-es2015": "^6.22.0",
-        "babel-preset-react": "^6.23.1",
-        "babel-preset-stage-0": "^6.22.0",
-        "babel-register": "^6.23.0",
-        "chai": "3.5.0",
-        "chai-enzyme": "0.5.0",
-        "copy-webpack-plugin": "^4.0.1",
-        "enzyme": "2.4.1",
-        "file-loader": "0.11.2",
-        "jsdom": "9.4.1",
-        "json-loader": "0.5.4",
-        "mocha": "2.5.3",
-        "npm-run-all": "2.3.0",
-        "nyc": "7.0.0",
-        "react": "^15.6.1",
-        "react-addons-test-utils": "^15.6.0",
-        "react-dom": "^15.6.1",
-        "rimraf": "2.5.3",
-        "sinon": "1.17.4",
-        "webpack": "^1.14.0",
-        "webpack-dev-server": "^1.16.2"
-    },
-    "babel": {
-      "presets": [
-        "es2015",
-        "react",
-        "stage-2"
-      ]
-    },
-    "dependencies": {
-      "prop-types": "^15.5.8"
-    },
-    "peerDependencies": {
-      "react": ">=0.14.7"
-    }
+  "name": "react-paging-toolkit",
+  "version": "0.1.1",
+  "description": "A React toolkit for simplifying paging",
+  "main": "dist/index.js",
+  "scripts": {
+    "watch:test": "npm t -- -w",
+    "test": "mocha src/tests/setup.js src/tests/index.spec.js",
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
+    "build:umd": "webpack --output-filename index.umd.js",
+    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
+    "demo": "webpack-dev-server --config demo/webpack.config.js --debug --content-base demo --inline --hot --colors",
+    "demo:test": "mocha demo/tests/index.spec.js --compilers js:babel-register",
+    "demo:build": "rimraf demo/dist && webpack --config demo/webpack.config.js -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevokk/react-paging-toolkit.git"
+  },
+  "keywords": [
+    "React.js",
+    "React",
+    "react-component",
+    "paging"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": "Steven Kissack <stevokk@hotmail.com> (http://www.stevenkissack.com/)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/stevokk/react-paging-toolkit/issues"
+  },
+  "homepage": "https://github.com/stevokk/react-paging-toolkit#readme",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.23.0",
+    "chai": "3.5.0",
+    "chai-enzyme": "0.5.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "enzyme": "2.4.1",
+    "file-loader": "0.11.2",
+    "jsdom": "9.4.1",
+    "json-loader": "0.5.4",
+    "mocha": "2.5.3",
+    "npm-run-all": "2.3.0",
+    "nyc": "7.0.0",
+    "react": "^15.6.1",
+    "react-addons-test-utils": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "rimraf": "2.5.3",
+    "sinon": "1.17.4",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "peerDependencies": {
+    "react": ">=0.14.7"
   }
+}
