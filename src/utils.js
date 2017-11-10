@@ -10,7 +10,7 @@ export function parsePagingParams(paramString, paramFilterList) {
 
     // Filter params from returned querystring
     if(paramFilterList) {
-        let params
+        let params = {}
         paramFilterList.map(param => {
             params[param] = parsedParams[param]
         })
