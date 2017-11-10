@@ -4861,8 +4861,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(2);
@@ -4945,10 +4943,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          className = _props.className;
 	
 	
-	      paging = _extends({ perPage: 20, page: 1 }, paging);
-	
-	      var pageCount = totalCount / paging.perPage;
-	      var currentPage = paging.page;
+	      var pageCount = totalCount / parseInt(paging.perPage || 20, 10);
+	      var currentPage = parseInt(paging.page || 1, 10);
 	
 	      var previousDisabled = currentPage === 1;
 	      var nextDisabled = pageCount === currentPage;
