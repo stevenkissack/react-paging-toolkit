@@ -85,8 +85,10 @@ var PaginateControl = function (_Component) {
           totalCount = _props.totalCount,
           className = _props.className;
 
+      // Round up to nearest page worth
 
-      var pageCount = totalCount / parseInt(paging.perPage || 20, 10);
+      var pageCount = Math.ceil(totalCount / parseInt(paging.perPage || 20, 10));
+
       var currentPage = parseInt(paging.page || 1, 10);
 
       var previousDisabled = currentPage === 1;

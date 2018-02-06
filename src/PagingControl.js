@@ -43,7 +43,9 @@ class PaginateControl extends Component {
   render() {
     let {paging, onSelect, totalCount, className} = this.props
 
-    let pageCount = totalCount / parseInt(paging.perPage || 20, 10)
+    // Round up to nearest page worth
+    let pageCount = Math.ceil(totalCount / parseInt(paging.perPage || 20, 10))
+
     let currentPage = parseInt(paging.page || 1, 10)
 
     let previousDisabled = currentPage === 1
